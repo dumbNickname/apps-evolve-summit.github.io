@@ -1,0 +1,427 @@
+<!doctype html>
+
+<!--
+
+    Welcome to the light side of the source, young padawan.
+
+    One step closer to learn something interesting you are...
+
+                               ____                  
+                            _.' :  `._               
+                        .-.'`.  ;   .'`.-.           
+               __      / : ___\ ;  /___ ; \      __  
+             ,'_ ""=-.:__;".-.";: :".-.":__;.-="" _`,
+             :' `.t""=-.. '<@.`;_  ',@:` ..-=""j.' `;
+                  `:-.._J '-.-'L__ `-.-' L_..-;'     
+                    "-.__ ;  .-"  "-.  : __.-"       
+                        L ' /.======.\ ' J           
+                         "-.   "__"   .-"            
+                        __.l"-:_JL_;-";.__           
+                     .-j/'.;  ;""""  / .'\"-.        
+                   .' /:`. "-.:     .-" .';  `.      
+                .-"  / ;  "-. "-..-" .-"  :    "-.   
+             .+"-.  : :      "-.__.-"      ;-._   \  
+             ; \  `.; ;                    : : "+. ; 
+             :  ;   ; ;                    : ;  : \: 
+             ;  :   ; :                    ;:   ;  : 
+            : \  ;  :  ;                  : ;  /  :: 
+            ;  ; :   ; :                  ;   :   ;: 
+            :  :  ;  :  ;                : :  ;  : ; 
+            ;\    :   ; :                ; ;     ; ; 
+            : `."-;   :  ;              :  ;    /  ; 
+             ;    -:   ; :              ;  : .-"   : 
+             :\     \  :  ;            : \.-"      : 
+              ;`.    \  ; :            ;.'_..-=  / ; 
+              :  "-.  "-:  ;          :/."      .'  :
+               \         \ :          ;/  __        :
+                \       .-`.\        /t-""  ":-+.   :
+                 `.  .-"    `l    __/ /`. :  ; ; \  ;
+                   \   .-" .-"-.-"  .' .'j \  /   ;/ 
+                    \ / .-"   /.     .'.' ;_:'    ;  
+                     :-""-.`./-.'     /    `.___.'   
+                           \ `t  ._  /               
+                            "-.t-._:'                
+
+-->
+
+<!--
+    
+    So you'd like to know how to use impress.js?
+    
+    You've made the first, very important step - you're reading the source code.
+    And that's how impress.js presentations are built - with HTML and CSS code.
+    
+    Believe me, you need quite decent HTML and CSS skills to be able to use impress.js effectively.
+    More importantly, you need to be a designer. There are no default styles or layouts for impress.js presentations.
+    
+    You need to design and build it by hand.
+    
+    So...
+    
+    Would you still like to know how to use impress.js?
+    
+-->
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Web Innovations</title>
+
+    <meta name="description" content="Web Innovations" />
+    <meta name="author" content="Marek Matczak" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <!--
+        
+        Impress.js doesn't depend on any external stylesheets. It adds all of the styles it needs for the
+        presentation to work.
+        
+        This style below contains styles only for demo presentation. Browse it to see how impress.js
+        classes are used to style presentation steps, or how to apply fallback styles, but I don't want
+        you to use them directly in your presentation.
+        
+        Be creative, build your own. We don't really want all impress.js presentations to look the same,
+        do we?
+        
+        When creating your own presentation get rid of this file. Start from scratch, it's fun!
+        
+    -->
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/own.css" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<!--
+    
+    Body element is used by impress.js to set some useful class names, that will allow you to detect
+    the support and state of the presentation in CSS or other scripts.
+    
+    First very useful class name is `impress-not-supported`. This class means, that browser doesn't
+    support features required by impress.js, so you should apply some fallback styles in your CSS.
+    It's not necessary to add it manually on this element. If the script detects that browser is not
+    good enough it will add this class, but keeping it in HTML means that users without JavaScript
+    will also get fallback styles.
+    
+    When impress.js script detects that browser supports all required features, this class name will
+    be removed.
+    
+    The class name on body element also depends on currently active presentation step. More details about
+    it can be found later, when `hint` element is being described.
+    
+-->
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<!--
+    
+    Now that's the core element used by impress.js.
+    
+    That's the wrapper for your presentation steps. In this element all the impress.js magic happens.
+    It doesn't have to be a `<div>`. Only `id` is important here as that's how the script find it.
+    
+    You probably won't need it now, but there are some configuration options that can be set on this element.
+    
+    To change the duration of the transition between slides use `data-transition-duration="2000"` giving it
+    a number of ms. It defaults to 1000 (1s).
+    
+    You can also control the perspective with `data-perspective="500"` giving it a number of pixels.
+    It defaults to 1000. You can set it to 0 if you don't want any 3D effects.
+    If you are willing to change this value make sure you understand how CSS perspective works:
+    https://developer.mozilla.org/en/CSS/perspective
+    
+    But as I said, you won't need it for now, so don't worry - there are some simple but interesting things
+    right around the corner of this tag ;)
+    
+-->
+<div id="impress">
+
+    <div id="overview" class="step" data-x="0" data-y="0" data-scale="5">
+    </div>
+
+    <div id="start" class="step summit-slide" data-x="0" data-y="0">
+        <p style="font-size: 6em; margin-bottom: -0.4em; text-align: center" class="text-uppercase text-bold text-color-primary">Web</p>
+        <p style="font-size: 2em; text-align: center" class="text-uppercase text-bold">Innovations</p>
+    </div>
+
+
+    <div id="aboutMe" class="step summit-slide summit-white-slide" data-x="1200" data-y="0" data-rotate="90">
+        <div class="my-avatar-with-text">
+            <div class="my-avatar"></div>
+            <h1 style="font-size: 1.35em; text-align: center" class="text-uppercase text-bold text-color-primary">Marek</h1>
+            <h1 style="text-align: center" class="text-uppercase text-bold text-color-fallback">Matczak</h1>
+        </div>
+        <div class="who-i-am">
+            <div>
+                <p style="font-size: 2em; margin-bottom: 0.25em; text-align: center" class="text-uppercase text-bold text-color-primary">Solution</p>
+                <p style="font-size: 2em; text-align: center" class="text-uppercase text-bold text-color-fallback">Architect</p>
+            </div>
+            <div style="margin-top: 2em;">
+                <p style="font-size: 2.25em; margin-bottom: 0.25em; text-align: center" class="text-uppercase text-bold text-color-primary">Specializes in</p>
+                <p style="font-size: 2em; text-align: center" class="text-uppercase text-bold text-color-secondary">Web Solutions</p>
+            </div>
+            <div style="margin-top: 2em;">
+                <p style="font-size: 1.75em; margin-bottom: 0.5em; text-align: center" class="text-uppercase text-bold text-color-primary">Impressed by</p>
+                <p style="font-size: 2.5em; text-align: center" class="text-bold text-color-fallback">JavaScript</p>
+                <p style="font-size: 3.4em; ; margin-top: 0.5em; text-align: center" class="text-bold text-color-secondary text-uppercase ">World</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="why" class="step summit-slide summit-white-slide" data-x="1400" data-y="-1000" data-rotate="45">
+        <div style="margin-top: 3em;">
+            <p style="font-size: 4em; margin-bottom: 0.5em; text-align: center" class="text-uppercase text-bold text-color-fallback">Why are we</p>
+            <p style="font-size: 1.9em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">actually talking about</p>
+            <p style="font-size: 2.65em; margin-bottom: 1em; text-align: center" class="text-uppercase text-bold text-color-secondary">web&nbsp;innovations</p>
+            <p style="font-size: 4em; text-align: center" class="text-uppercase text-bold text-color-secondary">?</p>
+        </div>
+    </div>
+
+    <div id="motivation" class="step summit-slide summit-white-slide" data-x="0" data-y="-2400" data-z="-1000" data-rotate="-180">
+        <div>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">We have (yet) another</p>
+            <p style="font-size: 3em; margin-bottom: 0.4em; text-align: center" class="text-uppercase text-bold text-color-primary">turning&nbsp;point</p>
+            <p style="font-size: 2.1em; text-align: center" class="text-uppercase text-bold text-color-secondary">in the web history...</p>
+        </div>
+        <div class="evergreen-browsers" style="margin-top: 3em;">
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-link">evergreen&nbsp;browsers</p>
+            <p>
+                <img src="img/internet.png"/>
+            </p>
+        </div>
+    </div>
+
+    <div id="platform" class="step summit-slide summit-white-slide"  data-x="0" data-y="-900" data-rotate="0">
+        <p style="font-size: 1.5em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">What can the web do today?</p>
+        <video controls="controls" height="70%">
+            <source src="img/whatwebcandotoday.mp4" type="video/mp4" />Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div id="newStandards" class="step summit-slide summit-white-slide" data-x="-1500" data-y="-1000" data-rotate="135">
+        <div class="pwa">
+            <img style="height: 7em;" src="img/pwa.png"/>
+            <div style="margin-left: 0.75em">
+                <p style="font-size: 1em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">Progressive</p>
+                <p style="font-size: 2.9em; margin-bottom: 0.4em; text-align: center" class="text-uppercase text-bold text-color-fallback">Web</p>
+                <p style="font-size: 2.5em; margin-bottom: 0.4em; text-align: center" class="text-uppercase text-bold text-color-primary">Apps</p>
+            </div>
+        </div>
+        <div class="web-components" style="margin-top: 3em;">
+            <div>
+                <p style="font-size: 2em; margin-right:0.75em; text-align: center" class="text-uppercase text-bold text-color-primary">Web&nbsp;Components</p>
+            </div>
+            <img src="img/ws-logo.svg"/>
+        </div>
+    </div>
+
+    <div id="example" class="step summit-slide summit-white-slide"  data-x="-1500" data-y="200" data-rotate="-90">
+        <video controls="controls" width="40%">
+            <source src="img/summit-pwa-app.mp4" type="video/mp4" />Your browser does not support the video tag.
+        </video>
+        <div>
+            <p style="font-size: 1.5em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">Installable</p>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Full screen</p>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">Load fast</p>
+            <p style="font-size: 1.5em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Work offline</p>
+            <p style="font-size: 1.2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">Save data locally</p>
+            <p style="font-size: 1em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">Sync data when online</p>
+        </div>
+    </div>
+
+    <div id="pushNotifications" class="step summit-slide summit-white-slide"  data-x="-1500" data-y="1600" data-rotate="135">
+        <video controls="controls" width="40%">
+            <source src="img/push-notifications.mp4" type="video/mp4" />Your browser does not support the video tag.
+        </video>
+        <div>
+            <p style="font-size: 1.5em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">How native-like</p>
+            <p style="font-size: 1.2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Progressive Web Apps</p>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">can be...</p>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">&nbsp;</p>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">Push</p>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">notifications</p>
+        </div>
+    </div>
+
+    <div id="webComponents" class="step summit-slide summit-white-slide"  data-x="0" data-y="1400" data-rotate="180">
+        <video controls="controls" width="40%">
+            <source src="img/web-components.mp4" type="video/mp4" />Your browser does not support the video tag.
+        </video>
+        <div>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">Custom</p>
+            <p style="font-size: 1.5em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">Reusable</p>
+            <p style="font-size: 1.5em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Encapsulated</p>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">Native</p>
+            <p style="font-size: 1.5em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-secondary">HTML tags to use</p>
+        </div>
+    </div>
+
+    <div id="whoDoesIt" class="step summit-slide summit-white-slide" data-x="1600" data-y="1400" data-rotate="-180">
+        <div>
+            <p style="font-size: 3.3em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">Does anyone</p>
+            <p style="font-size: 3em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">actually use it?</p>
+        </div>
+        <div>
+            <img style="height: 15em;" src="img/pwa-examples.png">
+        </div>
+    </div>
+
+    <div id="twitter" class="step summit-slide summit-white-slide" data-x="2600" data-y="0" data-rotate="-180">
+        <div>
+            <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">Last prominent</p>
+            <p style="font-size: 3em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Example</p>
+        </div>
+        <div>
+            <img style="height: 12em;" src="img/twitter.png">
+        </div>
+    </div>
+
+    <div id="credits" class="step summit-slide summit-white-slide" data-x="-2600" data-y="0" data-rotate="90">
+            <div>
+                <p style="font-size: 2em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-primary">Credits</p>
+                <p style="font-size: 1em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Bartłomiej Pietrowski</p>
+                <p style="font-size: 1em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Mieczysław Suska</p>
+                <p style="font-size: 1em; margin-bottom: 0.6em; text-align: center" class="text-uppercase text-bold text-color-fallback">Mathias Kegelmann</p>
+            </div>
+            <div>
+                <img style="height: 12em;" src="img/qrcode.png">
+            </div>
+    </div>
+
+</div>
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate</p>
+</div>
+<script>
+if ("ontouchstart" in document.documentElement) {
+    document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+}
+</script>
+
+<!--
+    
+    Last, but not least.
+    
+    To make all described above really work, you need to include impress.js in the page.
+    I strongly encourage to minify it first.
+    
+    In here I just include full source of the script to make it more readable.
+    
+    You also need to call a `impress().init()` function to initialize impress.js presentation.
+    And you should do it in the end of your document. Not only because it's a good practice, but also
+    because it should be done when the whole document is ready.
+    Of course you can wrap it in any kind of "DOM ready" event, but I was too lazy to do so ;)
+    
+-->
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+<!--
+    
+    The `impress()` function also gives you access to the API that controls the presentation.
+    
+    Just store the result of the call:
+    
+        var api = impress();
+    
+    and you will get three functions you can call:
+    
+        `api.init()` - initializes the presentation,
+        `api.next()` - moves to next step of the presentation,
+        `api.prev()` - moves to previous step of the presentation,
+        `api.goto( stepIndex | stepElementId | stepElement, [duration] )` - moves the presentation to the step given by its index number
+                id or the DOM element; second parameter can be used to define duration of the transition in ms,
+                but it's optional - if not provided default transition duration for the presentation will be used.
+    
+    You can also simply call `impress()` again to get the API, so `impress().next()` is also allowed.
+    Don't worry, it wont initialize the presentation again.
+    
+    For some example uses of this API check the last part of the source of impress.js where the API
+    is used in event handlers.
+    
+-->
+
+</body>
+</html>
+
+<!--
+    
+    Now you know more or less everything you need to build your first impress.js presentation, but before
+    you start...
+    
+    Oh, you've already cloned the code from GitHub?
+    
+    You have it open in text editor?
+    
+    Stop right there!
+    
+    That's not how you create awesome presentations. This is only a code. Implementation of the idea that
+    first needs to grow in your mind.
+    
+    So if you want to build great presentation take a pencil and piece of paper. And turn off the computer.
+    
+    Sketch, draw and write. Brainstorm your ideas on a paper. Try to build a mind-map of what you'd like
+    to present. It will get you closer and closer to the layout you'll build later with impress.js.
+    
+    Get back to the code only when you have your presentation ready on a paper. It doesn't make sense to do
+    it earlier, because you'll only waste your time fighting with positioning of useless points.
+    
+    If you think I'm crazy, please put your hands on a book called "Presentation Zen". It's all about 
+    creating awesome and engaging presentations.
+    
+    Think about it. 'Cause impress.js may not help you, if you have nothing interesting to say.
+    
+-->
+
+<!--
+    
+    Are you still reading this?
+    
+    For real?
+    
+    I'm impressed! Feel free to let me know that you got that far (I'm @bartaz on Twitter), 'cause I'd like
+    to congratulate you personally :)
+    
+    But you don't have to do it now. Take my advice and take some time off. Make yourself a cup of coffee, tea,
+    or anything you like to drink. And raise a glass for me ;)
+    
+    Cheers!
+    
+-->
+

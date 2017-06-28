@@ -1,0 +1,261 @@
+:root {
+    --primary-color: #00488D;
+    --secondary-color: #2E97C4;
+    --tertiary-color: #ffef34;
+    --fallback-color: black;
+    --bg-color: white;
+    --link-color: lightgreen;
+
+    --primary-font-family: 'Open Sans Condensed';
+    --secondary-font-family: 'Lobster Two';
+    --tertiary-font-family: 'Pacifico';
+}
+
+@font-face {
+    font-family: 'Open Sans Condensed';
+    font-style: normal;
+    font-weight: 300;
+    src: local('Open Sans Cond Light'), local('OpenSans-CondensedLight'), url('../fonts/gk5FxslNkTTHtojXrkp-xC8hAQ4ocbp44gFQt8tMfcH3rGVtsTkPsbDajuO5ueQw.woff2') format('woff2');
+    unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+
+.summit-slide {
+    font-family: 'Open Sans Condensed', Arial, sans-serif;
+}
+
+.summit-white-slide {
+    display: block;
+
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+
+    background-color: white;
+    /*border: 1px solid rgba(0, 0, 0, .3);*/
+    border-radius: 10px;
+    /*box-shadow: 0 2px 6px rgba(0, 0, 0, .1);*/
+
+    /*color: rgb(102, 102, 102);*/
+    /*text-shadow: 0 2px 2px rgba(0, 0, 0, .1);*/
+
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+#start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutMe {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#aboutMe .my-avatar-with-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#aboutMe .who-i-am {
+    display: flex;
+    flex-direction: column;
+    /*align-self: flex-end;*/
+    /*align-items: flex-end;*/
+    /*justify-content: center;*/
+    /*justify-content: space-between;*/
+    align-content: space-between;
+}
+
+#motivation .evergreen-browsers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#platform {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#newStandards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#newStandards .pwa {
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+#newStandards .web-components {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#example {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#pushNotifications {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#webComponents {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#whoDoesIt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#twitter {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#credits {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+.text-color-primary {
+    color: var(--primary-color);
+}
+
+.text-color-secondary {
+    color: var(--secondary-color);
+}
+
+.text-color-fallback {
+    color: var(--fallback-color);
+}
+
+.text-color-link {
+    color: var(--link-color);
+}
+
+.title-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 600px;
+    height: 600px;
+    padding: 40px 60px;
+
+    border-radius: 50%;
+
+    color: var(--primary-color);
+
+    font-family: 'Open Sans Condensed', Arial, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    /*letter-spacing: -1px;*/
+}
+
+.agenda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 300px;
+    height: 300px;
+    padding: 40px 60px;
+
+    /*background-color: white;*/
+    background-color: var(--primary-color);
+    /*border: 1px solid rgba(0, 0, 0, .3);*/
+    border-radius: 50%;
+    /*box-shadow: 0 2px 6px rgba(0, 0, 0, .1);*/
+
+    /*color: rgb(102, 102, 102);*/
+    /*text-shadow: 0 2px 2px rgba(0, 0, 0, .1);*/
+
+    font-family: 'Open Sans Condensed', Arial, sans-serif;
+    text-transform: uppercase;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.agenda.projects {
+    font-size: 45px;
+    line-height: 48px;
+    font-weight: bold;
+    color: white;
+}
+
+.agenda.besides-projects {
+    font-size: 35px;
+    line-height: 40px;
+    font-weight: bold;
+    color: white;
+}
+
+.agenda.my-mission {
+    background-color: white;
+    text-transform: none;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    line-height: 40px;
+}
+
+.my-avatar {
+    border-radius: 50%;
+    background: white no-repeat;
+    background-image: url('../img/Matczak_Marek_2.jpg');
+    height: 234px;
+    width: 234px;
+    margin-bottom: 15px;
+}
