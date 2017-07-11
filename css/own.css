@@ -70,7 +70,7 @@ p {
     justify-content: center;
 }
 
-#aboutMe .who-i-am {
+#aboutMe .who-am-i {
     display: flex;
     flex-direction: column;
     /*align-self: flex-end;*/
@@ -254,8 +254,9 @@ p {
 .my-avatar {
     border-radius: 50%;
     background: white no-repeat;
-    background-image: url('../img/Matczak_Marek_2.jpg');
+    background-image: url('../img/BP.jpg');
     height: 234px;
     width: 234px;
+    background-size: 248px;
     margin-bottom: 15px;
 }
